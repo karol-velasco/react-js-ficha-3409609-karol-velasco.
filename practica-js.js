@@ -51,14 +51,6 @@ console.log("Promedio: " + resultadoPromedio);
 
 /*Reto 2: funciones flecha*/
 
-function aplicarIva(precio) {
-return precio * 1.19;
-}
-
-const aplicarIva = (precio) => {
-return precio * 1.19;
-};
-
 const aplicarIva = precio => precio * 1.19;
 
 //Convertir cuadrado(numero) a arrow function.
@@ -66,7 +58,6 @@ const cuadrado = numero => numero * numero;
 console.log(cuadrado(5));
 
 //Convertir esMayorEdad(edad) a arrow function.
-function esMayorEdad(edad) { return edad >= 18; }
 
 const esMayorEdad = edad => edad >= 18;
 console.log(esMayorEdad(19));
@@ -77,6 +68,7 @@ const nombreCompleto = (nombre, apellido) => nombre + " " + apellido;
 console.log(nombreCompleto("Karol", "Velasco"));
 
 // --------------------------------------------------------------------- //
+
 /*Reto 3*/
 const productos = [
 { id: 1, nombre: 'Mouse', precio: 50000, categoria: 'Perifericos', stock: 5 },
@@ -90,3 +82,13 @@ const productos = [
 { id: 9, nombre: 'Televisor', precio: 2650000, categoria: 'Pantallas', stock: 0 },
 { id: 10, nombre: 'Impresora', precio: 530000, categoria: 'Oficina', stock: 3 }
 ];
+
+// --------------------------------------------------------------------- //
+
+/*Reto 4*/
+
+productos.forEach((producto, indice) => {
+console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - Stock: ${producto.stock}`);
+});
+
+
