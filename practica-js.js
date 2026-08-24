@@ -1,3 +1,5 @@
+/*Reto 1: funciones, parámetros y return*/
+
 function calcularTotal(precio, cantidad) {
 const total = precio * cantidad;
 return total;
@@ -44,3 +46,30 @@ console.log("Promedio: " + resultadoPromedio);
 //Pregunta de control
 //La diferencia entre console.log y return
 //Console.log sirve para mostrar informacion en la consolo o terminal, mientras que return devulve un valor desde una funcion para utilizarla luego.
+
+/*Reto 2: funciones flecha*/
+
+function aplicarIva(precio) {
+return precio * 1.19;
+}
+
+const aplicarIva = (precio) => {
+return precio * 1.19;
+};
+
+const aplicarIva = precio => precio * 1.19;
+
+//Convertir cuadrado(numero) a arrow function.
+const cuadrado = numero => numero * numero;
+console.log(cuadrado(5));
+
+//Convertir esMayorEdad(edad) a arrow function.
+function esMayorEdad(edad) { return edad >= 18; }
+
+const esMayorEdad = edad => edad >= 18;
+console.log(esMayorEdad(19));
+
+//Crear nombreCompleto(nombre, apellido) como arrow function.
+
+const nombreCompleto = (nombre, apellido) => nombre + " " + apellido;
+console.log(nombreCompleto("Karol", "Velasco"));
