@@ -91,4 +91,20 @@ productos.forEach((producto, indice) => {
 console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - Stock: ${producto.stock}`);
 });
 
+// --------------------------------------------------------------------- //
+
+/*Reto 5*/
+
+const nombres = productos.map(producto => producto.nombre);
+console.log(nombres);
+ //Ahora crea estos tres arreglos nuevos:
+ // preciosConIva: precio × 1.19.
+
+const preciosConIva = productos.map(p => ({ ...p, precioIva: p.precio * 1.19 }));
+const nombresMayuscula = productos.map(p => p.nombre.toUpperCase());
+const resumenProductos = productos.map(p => `${p.nombre} cuesta $${p.precio}`);
+
+console.log("\n--- Nombres en Mayúscula ---", nombresMayuscula);
+console.log("--- Resumen de Productos ---", resumenProductos);
+
 
