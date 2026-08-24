@@ -1,5 +1,5 @@
 /*Reto 1: funciones, parámetros y return*/
-
+console.log("\n --- Reto 1 ---\n")
 function calcularTotal(precio, cantidad) {
 const total = precio * cantidad;
 return total;
@@ -50,7 +50,7 @@ console.log("Promedio: " + resultadoPromedio);
 // --------------------------------------------------------------------- //
 
 /*Reto 2: funciones flecha*/
-
+console.log("\n--- Reto 2 ---\n")
 const aplicarIva = precio => precio * 1.19;
 
 //Convertir cuadrado(numero) a arrow function.
@@ -82,11 +82,12 @@ const productos = [
 { id: 9, nombre: 'Televisor', precio: 2650000, categoria: 'Pantallas', stock: 0 },
 { id: 10, nombre: 'Impresora', precio: 530000, categoria: 'Oficina', stock: 3 }
 ];
+console.log(productos);
 
 // --------------------------------------------------------------------- //
 
 /*Reto 4*/
-
+console.log("\n--- Reto 4 ---\n")
 productos.forEach((producto, indice) => {
 console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - Stock: ${producto.stock}`);
 });
@@ -94,17 +95,49 @@ console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - Stock: ${
 // --------------------------------------------------------------------- //
 
 /*Reto 5*/
-
+console.log("\n--- Reto 5 ---\n")
 const nombres = productos.map(producto => producto.nombre);
 console.log(nombres);
- //Ahora crea estos tres arreglos nuevos:
- // preciosConIva: precio × 1.19.
-
+//Ahora crea estos tres arreglos nuevos:
+ 
+// preciosConIva: precio × 1.19.
 const preciosConIva = productos.map(p => ({ ...p, precioIva: p.precio * 1.19 }));
+
+//nombresMayuscula: nombres convertidos a mayúscula.
 const nombresMayuscula = productos.map(p => p.nombre.toUpperCase());
+
+//resumenProductos: textos como "Mouse cuesta $50000".
 const resumenProductos = productos.map(p => `${p.nombre} cuesta $${p.precio}`);
 
 console.log("\n--- Nombres en Mayúscula ---", nombresMayuscula);
 console.log("--- Resumen de Productos ---", resumenProductos);
 
+// --------------------------------------------------------------------- //
 
+/*Reto 6*/
+console.log("\n--- Reto 6 ---\n")
+const disponibles = productos.filter(producto => producto.stock > 0);
+const producto3 = productos.find(producto => producto.id === 3);
+
+//Filtrar productos con precio mayor a $100.000.
+const productosMayor100 = productos.filter(p => p.precio > 100000);
+console.log("\nProductos mayores a $100.000: ", productosMayor100);
+
+//Filtrar productos con precio entre $50.000 y $200.000.
+const productosEntre50y200 = productos.filter(p => p.precio >= 50000 && p.precio <= 200000);
+console.log("\nProductos entre $50.000 y $200.000: ", productosEntre50y200);
+
+//Filtrar únicamente una categoría escogida por ti.
+const productosCategoriaAccesorios = productos.filter(p => p.categoria === 'Accesorios');
+console.log("\nProductos de la categoria Accesorios: ", productosCategoriaAccesorios);
+
+//Buscar el producto con id 5.
+const productosID = productos.filter(p => p.id === 5);
+console.log("\nProducto con id 5: ", productosID);
+
+//Crear una función buscarProducto(id) que use find() y retorne el producto.
+function buscarProducto(id){
+  const producto = productos.find(p => p.id === id);
+  return producto;
+}
+console.log("\nProducto por ID: ", buscarProducto(6));
