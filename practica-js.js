@@ -141,3 +141,31 @@ function buscarProducto(id){
   return producto;
 }
 console.log("\nProducto por ID: ", buscarProducto(6));
+
+// --------------------------------------------------------------------- //
+
+/*Reto 7*/
+console.log("\n--- Reto 7 ---\n")
+const hayAgotados = productos.some(producto => producto.stock === 0);
+const preciosValidos = productos.every(producto => producto.precio > 0);
+const valorInventario = productos.reduce(
+(total, producto) => total + producto.precio * producto.stock,
+0
+);
+//¿Existe algún producto agotado? = SI
+console.log("¿Existe algún producto agotado?: ", hayAgotados);
+
+//¿Existe algún producto con precio mayor a $1.000.000? = SI
+const hayProductosMayorMillon = productos.some(productos => productos.precio > 1000000);
+console.log("¿Existe algún producto con precio mayor a $1.000.000?", hayProductosMayorMillon);
+
+//¿Todos los productos tienen precio mayor que cero? = SI
+console.log("¿Todos los productos tienen precio mayor que cero?", preciosValidos);
+
+//¿Todos los productos tienen stock mayor o igual que cero? = SI
+const stockValidos = productos.every(producto => producto.stock >= 0);
+console.log("¿Todos los productos tienen stock mayor o igual que cero?", stockValidos);
+
+//Calcular el valor total del inventario.
+console.log("Valor total del inventario: $", valorInventario);
+
