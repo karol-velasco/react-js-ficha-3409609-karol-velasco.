@@ -1,5 +1,6 @@
 /*Reto 1: funciones, parámetros y return*/
 console.log("\n --- Reto 1 ---\n")
+
 function calcularTotal(precio, cantidad) {
   const total = precio * cantidad;
   return total;
@@ -51,6 +52,7 @@ console.log("Promedio: " + resultadoPromedio);
 
 /*Reto 2: funciones flecha*/
 console.log("\n--- Reto 2 ---\n")
+
 const aplicarIva = precio => precio * 1.19;
 
 //Convertir cuadrado(numero) a arrow function.
@@ -70,6 +72,8 @@ console.log(nombreCompleto("Karol", "Velasco"));
 // --------------------------------------------------------------------- //
 
 /*Reto 3*/
+console.log("\n--- Reto 3 ---\n")
+
 const productos = [
   { id: 1, nombre: 'Mouse', precio: 50000, categoria: 'Perifericos', stock: 5 },
   { id: 2, nombre: 'Teclado', precio: 90000, categoria: 'Perifericos', stock: 0 },
@@ -88,6 +92,7 @@ console.log(productos);
 
 /*Reto 4*/
 console.log("\n--- Reto 4 ---\n")
+
 productos.forEach((producto, indice) => {
   console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - Stock: ${producto.stock}`);
 });
@@ -96,6 +101,7 @@ productos.forEach((producto, indice) => {
 
 /*Reto 5*/
 console.log("\n--- Reto 5 ---\n")
+
 const nombres = productos.map(producto => producto.nombre);
 console.log(nombres);
 //Ahora crea estos tres arreglos nuevos:
@@ -116,6 +122,7 @@ console.log("--- Resumen de Productos ---", resumenProductos);
 
 /*Reto 6*/
 console.log("\n--- Reto 6 ---\n")
+
 const disponibles = productos.filter(producto => producto.stock > 0);
 const producto3 = productos.find(producto => producto.id === 3);
 
@@ -146,6 +153,7 @@ console.log("\nProducto por ID: ", buscarProducto(6));
 
 /*Reto 7*/
 console.log("\n--- Reto 7 ---\n")
+
 const hayAgotados = productos.some(producto => producto.stock === 0);
 const preciosValidos = productos.every(producto => producto.precio > 0);
 const valorInventario = productos.reduce(
