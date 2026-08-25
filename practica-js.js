@@ -114,4 +114,35 @@ console.log("--- Resumen de Productos ---", resumenProductos);
 
 // --------------------------------------------------------------------- //
 
+/*Reto 6*/
+console.log("\n--- Reto 6 ---\n")
+const disponibles = productos.filter(producto => producto.stock > 0);
+const producto3 = productos.find(producto => producto.id === 3);
+
+//Filtrar productos con precio mayor a $100.000.
+const productosMayor100 = productos.filter(p => p.precio > 100000);
+console.log("\nProductos mayores a $100.000: ", productosMayor100);
+
+//Filtrar productos con precio entre $50.000 y $200.000.
+const productosEntre50y200 = productos.filter(p => p.precio >= 50000 && p.precio <= 200000);
+console.log("\nProductos entre $50.000 y $200.000: ", productosEntre50y200);
+
+//Filtrar únicamente una categoría escogida por ti.
+const productosCategoriaAccesorios = productos.filter(p => p.categoria === 'Accesorios');
+console.log("\nProductos de la categoria Accesorios: ", productosCategoriaAccesorios);
+
+//Buscar el producto con id 5.
+const productosID = productos.filter(p => p.id === 5);
+console.log("\nProducto con id 5: ", productosID);
+
+//Crear una función buscarProducto(id) que use find() y retorne el producto.
+function buscarProducto(id) {
+  const producto = productos.find(p => p.id === id);
+  return producto;
+}
+console.log("\nProducto por ID: ", buscarProducto(6));
+
+// --------------------------------------------------------------------- //
+
+
 
