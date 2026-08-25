@@ -144,7 +144,6 @@ console.log("\nProducto por ID: ", buscarProducto(6));
 
 // --------------------------------------------------------------------- //
 
-
 /*Reto 7*/
 console.log("\n--- Reto 7 ---\n")
 const hayAgotados = productos.some(producto => producto.stock === 0);
@@ -169,5 +168,23 @@ console.log("¿Todos los productos tienen stock mayor o igual que cero?", stockV
 
 //Calcular el valor total del inventario.
 console.log("Valor total del inventario: $", valorInventario);
+
+// --------------------------------------------------------------------- //
+
+/*Reto 8*/
+console.log("\n--- Reto 8 ---\n")
+
+const { nombre, precio, stock } = productos[0];
+
+//Crea una copia de cualquier producto cambiando su precio y stock sin modificar el objeto original.
+const productoEditado = {
+  ...productos[0],
+  precio: 55000,
+  stock: 10
+};
+
+//Luego muestra una frase usando template literal y operador ternario.
+const estado = productoEditado.stock > 0 ? 'Disponible' : 'Agotado';
+console.log(`Producto: ${productoEditado.nombre} | Precio: $${productoEditado.precio} | Estado: ${estado}`);
 
 
