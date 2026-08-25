@@ -5,10 +5,22 @@
   font-family: Arial, sans-serif;
 }
 
+.contenedor h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contenedor p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
+  margin-bottom: 30px;
+  color: black;
 }
 
 .producto-card {
@@ -16,4 +28,8 @@
   border-radius: 10px;
   padding: 16px;
   background: white;
+}
+
+.producto-card h2 {
+  color: slateblue;
 }
