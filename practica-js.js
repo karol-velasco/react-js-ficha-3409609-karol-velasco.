@@ -86,4 +86,12 @@ console.log(productos);
 
 // --------------------------------------------------------------------- //
 
+/*Reto 4*/
+console.log("\n--- Reto 4 ---\n")
+productos.forEach((producto, indice) => {
+  console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - Stock: ${producto.stock}`);
+});
+
+// --------------------------------------------------------------------- //
+
 
